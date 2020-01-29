@@ -1,0 +1,19 @@
+# <IfModule mime_module>
+#   AddHandler application/x-httpd-ea-php56 .php .php5 .phtml
+# </IfModule>
+
+Options SymLinksIfOwnerMatch
+RewriteEngine on
+
+RewriteRule ^get/landmark/([0-9]+)$ get_landmark.php?id=$1
+RewriteRule ^get/landmarks get_landmarks.php
+RewriteRule ^get/category get_category.php
+RewriteRule ^get/countries get_countries.php
+RewriteRule ^image/([0-9]+)/([0-9]+)/([0-9]+)$ get_image.php?landmark=$1&image=$2&width=$3
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php56” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php56 .php .php5 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

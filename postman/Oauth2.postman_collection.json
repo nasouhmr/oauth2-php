@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "d10c8856-787f-46c1-81a1-acbf30cb1211",
+		"name": "Oauth2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Example Request",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer c724d2fde4551cf724904c50675095b6a6faa671",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost/oauth2/api/endpoint_example.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"oauth2",
+						"api",
+						"endpoint_example.php"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAccessToken",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"grant_type\":\"client_credentials\",\n\t\"client_id\":\"testclient\",\n\t\"client_secret\":\"testpass\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost/oauth2/token.php",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"path": [
+						"oauth2",
+						"token.php"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
